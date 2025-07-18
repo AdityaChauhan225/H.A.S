@@ -1,15 +1,44 @@
 import datetime as dt
-import playsound as ps
+import time
+import os
+from playsound import playsound # Import playsound
 
-hour= int(input("enter hour\n"))
-min= int(input("enter minute\n"))
-time= input("enter am/pm\n")
-time=time.lower()
+ALARM_SOUND = 'alarm.mp3'
 
-if time=="pm":
-    hour +=12 
-while True:     
-    if hour==dt.datetime.now().hour and min == dt.datetime.now().minute:
-        ps.playsound("C:\\code\\Popular Alarm Clock Sound Effect_77S70NhRoBc.mp3")
-        print("time up")
-        break
+def current_time():
+    current_time = dt.datetime.now().time()
+    current_time=current_time.strftime("%H:%M")
+    return current_time
+
+def alarm_time():
+    try:    
+        alarm = input("Enter time: ")
+        alarm = dt.datetime.strptime(alarm,"%H:%M").time()
+        return alarm
+    except Exception as e:
+        print(f"Invalid Time \n {e}")
+        return False
+    
+def snooz():
+    stop = input("Enter stop or snooz: ")
+    if stop.lower() =="stop":
+        return True
+    elif stop.lower()=="snooz":
+        now = dt.datetime.now()
+        future_minute = (now.minute + 1) % 60
+        future_hour = now.hour if (now.minute + 1) < 60 else (now.hour + 1) % 24
+        
+
+def alarm(at=alarm_time()):
+    while True:
+        if at == False:
+           at = alarm_time()
+
+        elif at == current_time():
+            # playsound(ALARM_SOUND)  # uncomment to play sound
+            print("Time over")
+
+            
+if __name__ =="__main__":
+    alarm()
+    # pass
