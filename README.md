@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)
 ![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
 
-**H.A.S** (Home Automation System / Helper Assistant System) is a Python-based desktop voice assistant designed to automate daily tasks, manage workflow, and provide hands-free control of your computer. It utilizes speech recognition and text-to-speech synthesis to interact with the user, functioning similarly to tools like Jarvis or Alexa.
+**H.A.S** (Helper Assistant System) is a Python-based desktop voice assistant designed to automate daily tasks, manage workflow, and provide hands-free control of your computer. It utilizes speech recognition and text-to-speech synthesis to interact with the user, functioning similarly to tools like Jarvis or Alexa.
 
 ## 🚀 Features
 
